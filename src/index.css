@@ -2,69 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 220 26% 6%;
-    --foreground: 180 100% 90%;
+    --background: 210 25% 98%;
+    --foreground: 215 25% 15%;
 
-    --card: 220 20% 10%;
-    --card-foreground: 180 100% 90%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 180 100% 90%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 180 100% 50%;
-    --primary-foreground: 220 26% 6%;
+    --primary: 215 70% 25%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 265 100% 65%;
-    --secondary-foreground: 220 26% 6%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 70% 25%;
 
-    --muted: 220 20% 20%;
-    --muted-foreground: 180 20% 65%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 20% 50%;
 
-    --accent: 285 100% 70%;
-    --accent-foreground: 220 26% 6%;
+    --accent: 190 75% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 180 30% 25%;
-    --input: 180 30% 25%;
-    --ring: 180 100% 50%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
 
-    --radius: 1rem;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
-    --sidebar-background: 220 26% 8%;
-    --sidebar-foreground: 180 100% 90%;
-    --sidebar-primary: 180 100% 50%;
-    --sidebar-primary-foreground: 220 26% 6%;
-    --sidebar-accent: 220 20% 15%;
-    --sidebar-accent-foreground: 180 100% 90%;
-    --sidebar-border: 180 30% 25%;
-    --sidebar-ring: 180 100% 50%;
+    --border: 214 25% 88%;
+    --input: 214 25% 88%;
+    --ring: 215 70% 25%;
 
-    /* Custom tokens for mysterious theme */
-    --glow-primary: 180 100% 50%;
-    --glow-secondary: 285 100% 70%;
-    --bottle-glass: 180 50% 30%;
-    --particle-color: 180 100% 70%;
+    --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-mysterious: linear-gradient(135deg, hsl(180 100% 30% / 0.3), hsl(285 100% 50% / 0.3));
-    --gradient-glow: linear-gradient(180deg, hsl(180 100% 50% / 0.2), transparent);
-    
-    /* Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --gradient-hero: linear-gradient(135deg, hsl(215 70% 25%), hsl(215 70% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(190 75% 45%), hsl(200 80% 55%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 25% 99%));
+
+    --shadow-sm: 0 2px 8px hsla(215, 70%, 25%, 0.08);
+    --shadow-md: 0 4px 16px hsla(215, 70%, 25%, 0.12);
+    --shadow-lg: 0 8px 32px hsla(215, 70%, 25%, 0.16);
+
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Custom tokens for chatbot */
+    --glow-primary: 190 75% 45%;
+    --bottle-glass: 190 50% 30%;
+    --particle-color: 190 75% 70%;
   }
 
   .dark {
-    --background: 220 26% 6%;
-    --foreground: 180 100% 90%;
+    --background: 215 30% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 25% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 25% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 190 75% 55%;
+    --primary-foreground: 215 30% 8%;
+
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 25% 15%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 190 75% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 190 75% 55%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(215 30% 12%), hsl(215 30% 18%));
+    --gradient-accent: linear-gradient(135deg, hsl(190 75% 35%), hsl(200 80% 45%));
+    --gradient-card: linear-gradient(180deg, hsl(215 25% 12%), hsl(215 25% 10%));
+
+    --shadow-sm: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+    --shadow-md: 0 4px 16px hsla(0, 0%, 0%, 0.4);
+    --shadow-lg: 0 8px 32px hsla(0, 0%, 0%, 0.5);
   }
 }
 
